@@ -17,6 +17,7 @@ function operacionTelefonos(modeloTelefono){
         listaProductos.push(`${modeloTelefono.nombre}`);
         precios.push(modeloTelefono.precio);
         alert(`Producto agregado con exito`);
+        hayProductos=true;
     }else if(pregunta=="no"){
         alert("Operacion cancelada");
     }else{
@@ -175,6 +176,7 @@ let listaFinal="";
 let pregunta="";
 let bool=false;
 let encontrado=false;
+let hayProductos=false;
 
 alert("Bienvenido a Phone Market, ¡Aca podras encontrar lo mejor en telefonos, desde baja hasta alta gama!");
 
@@ -203,7 +205,7 @@ while(opcionMarca!=="salir"){
     opcionMarca=prompt('Ingrese el nombre de algunas de estas marcas disponibles:\nSamsung.\nIphone.\nXiaomi.\nMotorola.\nO ingrese "salir" para finalizar la compra.').toLowerCase();
 }
 
-if(pregunta==""){
+if(hayProductos==false){
     alert("!Gracias por visitar la pagina¡");
 }else{
     precios.find(preciosOriginales=>{
